@@ -16,8 +16,8 @@ include_once 'ElementAction/Interface.php';
 /**
  * Class representing task API 
  */
-if (!class_exists(FreshLibPHP_Task)) :
-class FreshLibPHP_Task extends FreshLibPHP_ElementAction implements FreshLibPHP_Element_Interface,FreshLibPHP_ElementAction_Interface
+if (!class_exists(FreshBooks_Task)) :
+class FreshBooks_Task extends FreshBooks_ElementAction implements FreshBooks_Element_Interface,FreshBooks_ElementAction_Interface
 {
 	protected $_elementName = "task";
 	
@@ -152,7 +152,7 @@ class FreshLibPHP_Task extends FreshLibPHP_ElementAction implements FreshLibPHP_
 		$resultInfo['total'] = (string)$tasks['total'];
 
 		foreach ($tasks->children() as $key=>$currXML){
-			$thisTasks = new FreshLibPHP_Task();
+			$thisTasks = new FreshBooks_Task();
 			$thisTasks->_internalLoadXML($currXML);
 			$rows[] = $thisTasks;
 		}

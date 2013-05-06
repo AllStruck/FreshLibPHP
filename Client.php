@@ -16,8 +16,8 @@ include_once 'ElementAction/Interface.php';
 /**
  * Class representing client API 
  */
-if (!class_exists('FreshLibPHP_Client')) :
-class FreshLibPHP_Client extends FreshLibPHP_ElementAction implements FreshLibPHP_Element_Interface,FreshLibPHP_ElementAction_Interface
+if (!class_exists('FreshBooks_Client')) :
+class FreshBooks_Client extends FreshBooks_ElementAction implements FreshBooks_Element_Interface,FreshBooks_ElementAction_Interface
 {
 	protected $_elementName = "client";
 	
@@ -240,7 +240,7 @@ class FreshLibPHP_Client extends FreshLibPHP_ElementAction implements FreshLibPH
 		$resultInfo['total'] = (string)$clients['total'];
 
 		foreach ($clients->children() as $key=>$currXML){
-			$thisClient = new FreshLibPHP_Client();
+			$thisClient = new FreshBooks_Client();
 			$thisClient->_internalLoadXML($currXML);
 			$rows[] = $thisClient;
 		}

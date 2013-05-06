@@ -16,8 +16,8 @@ include_once 'ElementAction/Interface.php';
 /**
  * Class representing project API 
  */
-if (!class_exists('FreshLibPHP_Project')) :
-class FreshLibPHP_Project extends FreshLibPHP_ElementAction implements FreshLibPHP_Element_Interface,FreshLibPHP_ElementAction_Interface
+if (!class_exists('FreshBooks_Project')) :
+class FreshBooks_Project extends FreshBooks_ElementAction implements FreshBooks_Element_Interface,FreshBooks_ElementAction_Interface
 {
 	protected $_elementName = "project";
 	
@@ -193,7 +193,7 @@ class FreshLibPHP_Project extends FreshLibPHP_ElementAction implements FreshLibP
 		$resultInfo['total'] = (string)$projects['total'];
 
 		foreach ($projects->children() as $key=>$currXML){
-			$thisProject = new FreshLibPHP_Project();
+			$thisProject = new FreshBooks_Project();
 			$thisProject->_internalLoadXML($currXML);
 			$rows[] = $thisProject;
 		}

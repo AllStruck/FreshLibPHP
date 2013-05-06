@@ -16,8 +16,8 @@ include_once 'ElementAction/Interface.php';
 /**
  * Class representing item API 
  */
-if (!class_exists('FreshLibPHP_Item')) :
-class FreshLibPHP_Item extends FreshLibPHP_ElementAction implements FreshLibPHP_Element_Interface,FreshLibPHP_ElementAction_Interface
+if (!class_exists('FreshBooks_Item')) :
+class FreshBooks_Item extends FreshBooks_ElementAction implements FreshBooks_Element_Interface,FreshBooks_ElementAction_Interface
 {
 	protected $_elementName = "item";
 	
@@ -137,7 +137,9 @@ class FreshLibPHP_Item extends FreshLibPHP_ElementAction implements FreshLibPHP_
  */	
 	protected function _internalPrepareListing($filters,&$content)
 	{
-		//
+		if(is_array($filters) && count($filters)){
+			$content .= $this->_getTagXML("folder",$filters['folder']);
+		}
 	}
 	
 /**
@@ -154,7 +156,7 @@ class FreshLibPHP_Item extends FreshLibPHP_ElementAction implements FreshLibPHP_
 		$resultInfo['total'] = (string)$items['total'];
 
 		foreach ($items->children() as $key=>$currXML){
-			$thisItem = new FreshLibPHP_Item();
+			$thisItem = new FreshBooks_Item();
 			$thisItem->_internalLoadXML($currXML);
 			$rows[] = $thisItem;
 		}

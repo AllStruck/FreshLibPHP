@@ -9,7 +9,7 @@
  * @version    1.0
  */
 
-interface FreshLibPHP_ElementAction_Interface
+interface FreshBooks_ElementAction_Interface
 {
 /**
  * create/save object to the server

@@ -16,8 +16,8 @@ include_once 'ElementAction/Interface.php';
 /**
  * Class representing staff API 
  */
-if (!class_exists('FreshLibPHP_Staff')) :
-class FreshLibPHP_Staff extends FreshLibPHP_ElementAction implements FreshLibPHP_Element_Interface,FreshLibPHP_ElementAction_Interface
+if (!class_exists('FreshBooks_Staff')) :
+class FreshBooks_Staff extends FreshBooks_ElementAction implements FreshBooks_Element_Interface,FreshBooks_ElementAction_Interface
 {
 	protected $_elementName = "staff";
 	
@@ -184,7 +184,7 @@ class FreshLibPHP_Staff extends FreshLibPHP_ElementAction implements FreshLibPHP
 		$resultInfo['total'] = (string)$staffMembers['total'];
 
 		foreach ($staffMembers->children() as $key=>$currXML){
-			$thisMember = new FreshLibPHP_Staff();
+			$thisMember = new FreshBooks_Staff();
 			$thisMember->_internalLoadXML($currXML);
 			$rows[] = $thisMember;
 		}

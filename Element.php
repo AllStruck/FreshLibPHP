@@ -13,8 +13,8 @@ include_once 'HttpClient.php';
 /**
  * An abstract class representing a an XML data block
  */
-if (!class_exists('FreshLibPHP_Element')) :
-abstract class FreshLibPHP_Element
+if (!class_exists('FreshBooks_Element')) :
+abstract class FreshBooks_Element
 {
 /**
  * main xml tag name for particular instance
@@ -66,7 +66,7 @@ abstract class FreshLibPHP_Element
 		$this->lastError = "";
 		
 		$requestXML = $this->_requestEnvelope($content,$methodName);
-		$resultXML = FreshLibPHP_HttpClient::getInstance()->send($requestXML);
+		$resultXML = FreshBooks_HttpClient::getInstance()->send($requestXML);
 		if($resultXML === false){
 			return false;
 		}
@@ -79,7 +79,7 @@ abstract class FreshLibPHP_Element
  */ 	
 	protected function _processResponse(&$XMLObject){
 		if($XMLObject === false){
-			$this->lastError = FreshLibPHP_HttpClient::getInstance()->getLastError();
+			$this->lastError = FreshBooks_HttpClient::getInstance()->getLastError();
 			return false;
 		}
 				

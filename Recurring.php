@@ -13,8 +13,8 @@ include_once 'BaseInvoice.php';
 /**
  * Class representing invoice API 
  */
-if (!class_exists('FreshLibPHP_Recurring')) :
-class FreshLibPHP_Recurring extends FreshLibPHP_BaseInvoice 
+if (!class_exists('FreshBooks_Recurring')) :
+class FreshBooks_Recurring extends FreshBooks_BaseInvoice 
 {
 	protected $_elementName = "recurring";
 	
@@ -173,7 +173,7 @@ class FreshLibPHP_Recurring extends FreshLibPHP_BaseInvoice
 		$resultInfo['total'] = (string)$recurrings['total'];
 
 		foreach ($recurrings->children() as $key=>$currXML){
-			$thisRecurring = new FreshLibPHP_Recurring();
+			$thisRecurring = new FreshBooks_Recurring();
 			$thisRecurring->_internalLoadXML($currXML);
 			$rows[] = $thisRecurring;
 		}

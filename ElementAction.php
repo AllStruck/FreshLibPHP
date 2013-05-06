@@ -14,8 +14,8 @@ include 'Element.php';
 /**
  * An abstract class representing a an XML data block, with create/update/delete/get/list actions
  */
-if (!class_exists('FreshLibPHP_ElementAction')) :
-abstract class FreshLibPHP_ElementAction extends FreshLibPHP_Element
+if (!class_exists('FreshBooks_ElementAction')) :
+abstract class FreshBooks_ElementAction extends FreshBooks_Element
 {
 	
 /**

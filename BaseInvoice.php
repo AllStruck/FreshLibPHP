@@ -16,8 +16,8 @@ include_once 'ElementAction/Interface.php';
 /**
  * Class representing base invoice API - abstract class to be inherited in invoice, estimate, recurring
  */
-if (!class_exists('FreshLibPHP_BaseInvoice')) :
-abstract class FreshLibPHP_BaseInvoice extends FreshLibPHP_ElementAction implements FreshLibPHP_Element_Interface, FreshLibPHP_ElementAction_Interface {
+if (!class_exists('FreshBooks_BaseInvoice')) :
+abstract class FreshBooks_BaseInvoice extends FreshBooks_ElementAction implements FreshBooks_Element_Interface, FreshBooks_ElementAction_Interface {
 
     public $clientId = "";
     public $number = "";

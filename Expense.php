@@ -16,8 +16,8 @@ include_once 'ElementAction/Interface.php';
 /**
  * Class representing expense API 
  */
-if (!class_exists('FreshLibPHP_Expense')) :
-class FreshLibPHP_Expense extends FreshLibPHP_ElementAction implements FreshLibPHP_Element_Interface,FreshLibPHP_ElementAction_Interface
+if (!class_exists('FreshBooks_Expense')) :
+class FreshBooks_Expense extends FreshBooks_ElementAction implements FreshBooks_Element_Interface,FreshBooks_ElementAction_Interface
 {
 	protected $_elementName = "expense";
 	
@@ -194,7 +194,7 @@ class FreshLibPHP_Expense extends FreshLibPHP_ElementAction implements FreshLibP
 		$resultInfo['total'] = (string)$expenses['total'];
 
 		foreach ($expenses->children() as $key=>$currXML){
-			$thisExpense = new FreshLibPHP_Expense();
+			$thisExpense = new FreshBooks_Expense();
 			$thisExpense->_internalLoadXML($currXML);
 			$rows[] = $thisExpense;
 		}

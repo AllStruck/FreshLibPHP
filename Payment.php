@@ -16,8 +16,8 @@ include_once 'ElementAction/Interface.php';
 /**
  * Class representing payment API 
  */
-if (!class_exists('FreshLibPHP_Payment')) :
-class FreshLibPHP_Payment extends FreshLibPHP_ElementAction implements FreshLibPHP_Element_Interface,FreshLibPHP_ElementAction_Interface
+if (!class_exists('FreshBooks_Payment')) :
+class FreshBooks_Payment extends FreshBooks_ElementAction implements FreshBooks_Element_Interface,FreshBooks_ElementAction_Interface
 {
 	protected $_elementName = "payment";
 	
@@ -165,7 +165,7 @@ class FreshLibPHP_Payment extends FreshLibPHP_ElementAction implements FreshLibP
 		$resultInfo['total'] = (string)$payments['total'];
 
 		foreach ($payments->children() as $key=>$currXML){
-			$thisPayment = new FreshLibPHP_Payment();
+			$thisPayment = new FreshBooks_Payment();
 			$thisPayment->_internalLoadXML($currXML);
 			$rows[] = $thisPayment;
 		}

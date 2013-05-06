@@ -9,7 +9,7 @@
  * @version    1.0
  */
 
-interface FreshLibPHP_Element_Interface
+interface FreshBooks_Element_Interface
 {
 /**
  * return XML data

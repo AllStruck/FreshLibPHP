@@ -13,8 +13,8 @@
 /**
  * Class Making Calls to the server
  */
-if (!class_exists('FreshLibPHP_HttpClient')):
-class FreshLibPHP_HttpClient
+if (!class_exists('FreshBooks_HttpClient')):
+class FreshBooks_HttpClient
 {
 	private $_url = "";
 	private $_token = "";
@@ -46,7 +46,7 @@ class FreshLibPHP_HttpClient
 	/**
 	 * Singleton instance
 	 *
-	 * @return FreshLibPHP_HttpClient
+	 * @return FreshBooks_HttpClient
 	 */
 	public static function getInstance()
 	{

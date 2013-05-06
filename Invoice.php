@@ -13,8 +13,8 @@ include_once 'BaseInvoice.php';
 /**
  * Class representing invoice API 
  */
-if (!class_exists('FreshLibPHP_Invoice')) :
-class FreshLibPHP_Invoice extends FreshLibPHP_BaseInvoice 
+if (!class_exists('FreshBooks_Invoice')) :
+class FreshBooks_Invoice extends FreshBooks_BaseInvoice 
 {
 	protected $_elementName = "invoice";
 	
@@ -123,7 +123,7 @@ class FreshLibPHP_Invoice extends FreshLibPHP_BaseInvoice
 		$resultInfo['total'] = (string)$invoices['total'];
 
 		foreach ($invoices->children() as $key=>$currXML){
-			$thisInvoice = new FreshLibPHP_Invoice();
+			$thisInvoice = new FreshBooks_Invoice();
 			$thisInvoice->_internalLoadXML($currXML);
 			$rows[] = $thisInvoice;
 		}

@@ -16,8 +16,8 @@ include_once 'ElementAction/Interface.php';
 /**
  * Class representing time_entry API 
  */
-if (!class_exists(FreshLibPHP_TimeEntry)) :
-class FreshLibPHP_TimeEntry extends FreshLibPHP_ElementAction implements FreshLibPHP_Element_Interface,FreshLibPHP_ElementAction_Interface
+if (!class_exists(FreshBooks_TimeEntry)) :
+class FreshBooks_TimeEntry extends FreshBooks_ElementAction implements FreshBooks_Element_Interface,FreshBooks_ElementAction_Interface
 {
 	protected $_elementName = "time_entry";
 	
@@ -162,7 +162,7 @@ class FreshLibPHP_TimeEntry extends FreshLibPHP_ElementAction implements FreshLi
 		$resultInfo['total'] = (string)$timeEntries['total'];
 
 		foreach ($timeEntries->children() as $key=>$currXML){
-			$thisTimeEntry = new FreshLibPHP_TimeEntry();
+			$thisTimeEntry = new FreshBooks_TimeEntry();
 			$thisTimeEntry->_internalLoadXML($currXML);
 			$rows[] = $thisTimeEntry;
 		}

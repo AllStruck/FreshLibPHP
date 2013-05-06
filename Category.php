@@ -16,8 +16,8 @@ include_once 'ElementAction/Interface.php';
 /**
  * Class representing category API 
  */
-if (!class_exists('FreshLibPHP_Category')) :
-class FreshLibPHP_Category extends FreshLibPHP_ElementAction implements FreshLibPHP_Element_Interface,FreshLibPHP_ElementAction_Interface
+if (!class_exists('FreshBooks_Category')) :
+class FreshBooks_Category extends FreshBooks_ElementAction implements FreshBooks_Element_Interface,FreshBooks_ElementAction_Interface
 {
 	protected $_elementName = "category";
 	
@@ -146,7 +146,7 @@ class FreshLibPHP_Category extends FreshLibPHP_ElementAction implements FreshLib
 		$resultInfo['total'] = (string)$categories['total'];
 
 		foreach ($categories->children() as $key=>$currXML){
-			$thisCategory = new FreshLibPHP_Category();
+			$thisCategory = new FreshBooks_Category();
 			$thisCategory->_internalLoadXML($currXML);
 			$rows[] = $thisCategory;
 		}
