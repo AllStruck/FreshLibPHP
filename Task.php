@@ -16,7 +16,7 @@ include_once 'ElementAction/Interface.php';
 /**
  * Class representing task API 
  */
-if (!class_exists(FreshBooks_Task)) :
+if (!class_exists('FreshBooks_Task')) :
 class FreshBooks_Task extends FreshBooks_ElementAction implements FreshBooks_Element_Interface,FreshBooks_ElementAction_Interface
 {
 	protected $_elementName = "task";

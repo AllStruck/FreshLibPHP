@@ -16,7 +16,7 @@ include_once 'ElementAction/Interface.php';
 /**
  * Class representing time_entry API 
  */
-if (!class_exists(FreshBooks_TimeEntry)) :
+if (!class_exists('FreshBooks_TimeEntry')) :
 class FreshBooks_TimeEntry extends FreshBooks_ElementAction implements FreshBooks_Element_Interface,FreshBooks_ElementAction_Interface
 {
 	protected $_elementName = "time_entry";
